@@ -87,8 +87,6 @@ const asynCtrl = (function(){
         })
     }
   
-
-
     return {
         fetchImg: fetchImg,
         fetchQuote: fetchQuote
@@ -198,7 +196,6 @@ const appCtrl = (() => {
         // Fetch image and handle errors
         asynCtrl.fetchImg(tag)
         .then(resp => {
-            console.log(resp);
             imgWrapper.innerHTML =  `<img src="${resp.urls.regular}" class="quote__img" alt="${resp['alt_description']}"></img>`
             attribution.nextElementSibling.innerHTML = `Photo by <a target="_blank" href="https://unsplash.com/@${resp.user.username}?utm_source=quote_generator&utm_medium=referral">${resp.user.name}</a> on <a target="_blank" href="https://unsplash.com/?utm_source=quote_generator&utm_medium=referral">Unsplash</a>`;        
         })
@@ -299,7 +296,6 @@ const appCtrl = (() => {
         // Remove a tag from UI and storage
         tagsUl.addEventListener('click' , (e) => {
             if(e.target.classList.contains('tags__cross')){
-                console.log(e.target.parentElement.id);
                 dataCrtl.removeTag(e.target.parentElement.id);
                 uiCtrl.populateTags(dataCrtl.tags);
             }
