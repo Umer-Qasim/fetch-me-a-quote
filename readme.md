@@ -11,6 +11,7 @@ To create an app with a modern UI which uses the JS's module and revealing modul
 ## Built with
 * Html5
 * SCSS/CSS3
+* BEM methodology
 * Vanilla JS
 
 ## APIs consumed
